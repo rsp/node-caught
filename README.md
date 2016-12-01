@@ -9,9 +9,61 @@ node caught
 [![Downloads][downloads-img]][stats-url]
 [![License][license-img]][license-url]
 
-See this answer on Stack Overflow:
+Doing something like this:
 
-* [Should I refrain from handling Promise rejection asynchronously?](https://stackoverflow.com/questions/40920179/should-i-refrain-from-handling-promise-rejection-asynchronously/40921505#40921505)
+```js
+var p = Promise.reject(0);
+
+setTimeout(() => p.catch(e => console.error('caught')), 0);
+```
+
+will generate a lot of helpful warnings:
+
+```
+(node:13548) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): 0
+(node:13548) DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+(node:13548) PromiseRejectionHandledWarning: Promise rejection was handled asynchronously (rejection id: 1)
+```
+
+This module lets you write:
+
+```js
+var caught = require('caught');
+
+var p = caught(Promise.reject(0));
+
+setTimeout(() => p.catch(e => console.error('caught')), 0);
+```
+
+to avoid those warnings. Use at your own risk.
+
+For more info see this answer on Stack Overflow:
+
+* [**Should I refrain from handling Promise rejection asynchronously?**](https://stackoverflow.com/questions/40920179/should-i-refrain-from-handling-promise-rejection-asynchronously/40921505#40921505)
+
+Installation
+------------
+To use in your projects:
+
+```sh
+npm install caught --save
+```
+
+Usage
+-----
+```js
+var caught = require('caught');
+
+var p = caught(Promise.reject(0));
+```
+
+Note that it is not the same as writing:
+
+```js
+var p = Promise.reject(0).catch(() => {});
+```
+
+which would not return the original promise and wouldn't let you to add `catch` handlers later.
 
 Issues
 ------
