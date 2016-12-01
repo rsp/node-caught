@@ -28,15 +28,17 @@ will generate a lot of helpful warnings:
 This module lets you write:
 
 ```js
-var caught = require('caught');
-
 var p = caught(Promise.reject(0));
 
 setTimeout(() => p.catch(e => console.error('caught')), 0);
 ```
 
-to avoid those warnings. Use at your own risk.
+to ignore those warnings on a per-promise basis.
 
+Use at your own risk.
+
+Background
+-
 For more info see this answer on Stack Overflow:
 
 * [**Should I refrain from handling Promise rejection asynchronously?**](https://stackoverflow.com/questions/40920179/should-i-refrain-from-handling-promise-rejection-asynchronously/40921505#40921505)
@@ -63,7 +65,7 @@ Note that it is not the same as writing:
 var p = Promise.reject(0).catch(() => {});
 ```
 
-which would not return the original promise and wouldn't let you to add `catch` handlers later.
+which would not return the original promise and wouldn't let you add `catch` handlers later.
 
 Issues
 ------
