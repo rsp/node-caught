@@ -1,6 +1,6 @@
 {
   "name": "caught",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Avoids UnhandledPromiseRejectionWarning and PromiseRejectionHandledWarning",
   "main": "index.js",
   "scripts": {
