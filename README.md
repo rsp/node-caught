@@ -9,6 +9,15 @@ node caught
 [![Downloads][downloads-img]][stats-url]
 [![License][license-img]][license-url]
 
+This module lets you attach empty rejcetion handlers to promises
+to avoid certain warnings that will be fatal errors
+in next versions of Node.
+
+Since version 0.1.0 it supports TypeScript
+thanks to [Wil Lee](https://github.com/kourge).
+
+More info
+-
 Doing something like this:
 
 ```js
@@ -80,6 +89,10 @@ Author
 [![Follow on Twitter][twitter-follow-img]][twitter-follow-url]
 <br/>
 [![Follow on Stack Exchange][stackexchange-img]][stackoverflow-url]
+
+Contributors
+------------
+* [Wil Lee](https://github.com/kourge) (added TypeScript support in [PR #1](https://github.com/rsp/node-caught/pull/1)
 
 License
 -------
