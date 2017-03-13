@@ -92,7 +92,7 @@ Author
 
 Contributors
 ------------
-* [Wil Lee](https://github.com/kourge) (added TypeScript support in [PR #1](https://github.com/rsp/node-caught/pull/1)
+* [Wil Lee](https://github.com/kourge) (added TypeScript support in [PR #1](https://github.com/rsp/node-caught/pull/1))
 
 License
 -------
