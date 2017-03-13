@@ -1,6 +1,6 @@
 {
   "name": "caught",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Avoids UnhandledPromiseRejectionWarning and PromiseRejectionHandledWarning",
   "main": "index.js",
   "types": "index.d.ts",
