@@ -16,6 +16,9 @@ in next versions of Node.
 Since version 0.1.0 it supports TypeScript
 thanks to [Wil Lee](https://github.com/kourge).
 
+For a version for [Deno](https://deno.land/),
+see: https://deno.land/x/caught
+
 More info
 -
 Doing something like this:
